@@ -22,8 +22,6 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
-import org.springframework.batch.test.JobLauncherTestUtils;
-import org.springframework.batch.test.context.BatchTestContextBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportRuntimeHints;
@@ -92,21 +90,6 @@ public class BatchConfig {
                   DecoratingProxy.class
               ));
 
-      /*try {
-        hints
-            .reflection()
-            .registerConstructor(
-                BatchTestContextBeanPostProcessor.class.getDeclaredConstructor(),
-                ExecutableMode.INVOKE
-            )
-            .registerType(BatchTestContextBeanPostProcessor.class, MemberCategory.INVOKE_DECLARED_METHODS)
-            .registerConstructor(
-                JobLauncherTestUtils.class.getDeclaredConstructor(),
-                ExecutableMode.INVOKE
-            );
-      } catch (NoSuchMethodException e) {
-        throw new RuntimeException(e);
-      }*/
     }
   }
 }

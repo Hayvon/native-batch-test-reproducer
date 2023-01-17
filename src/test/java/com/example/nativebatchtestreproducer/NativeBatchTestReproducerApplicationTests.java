@@ -1,6 +1,7 @@
 package com.example.nativebatchtestreproducer;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.aot.AotDetector;
 import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.test.JobLauncherTestUtils;
@@ -19,6 +20,7 @@ class NativeBatchTestReproducerApplicationTests {
 
 	@Test
 	void testJob() throws Exception {
+
 		// when
 		JobExecution jobExecution = jobLauncherTestUtils.launchJob();
 		ExitStatus actualJobExitStatus = jobExecution.getExitStatus();
